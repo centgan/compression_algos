@@ -16,12 +16,12 @@ def compress(input_path):
             count_char += 1
         else:
             if last_char != '':
-                output_binary += ' ' + format(ord(last_char), '08b') + ' ' + format(ord(chr(count_char)), '08b')
+                output_binary += ' ' + format(ord(last_char), 'b') + ' ' + format(ord(chr(count_char)), 'b')
                 # output_string += last_char + str(count_char)
             last_char = char
             count_char = 1
     # output_string += last_char + str(count_char)
-    output_binary += ' ' + format(ord(last_char), '08b') + ' ' + format(ord(chr(count_char)), '08b')
+    output_binary += ' ' + format(ord(last_char), 'b') + ' ' + format(ord(chr(count_char)), 'b')
 
     # output_binary = ' '.join(format(ord(x), 'b') for x in output_string)
     output_path = input_path.split('.txt')[0]+'_rle_compressed.txt'
