@@ -1,2 +1,4 @@
 .venv
 .idea
+*_compressed.txt
+*_uncompressed.txt
