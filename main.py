@@ -4,7 +4,7 @@ import os
 
 def compress(input_path):
     original_file_size = os.stat(input_path).st_size
-    with open(input_path, 'rb') as f:
+    with open(input_path, 'r') as f:
         data = str(f.read())
 
     # output_string = ''
@@ -41,7 +41,7 @@ def decompress(input_path):
         char = chr(int(each_byte[byte_index], 2))
         count = int(each_byte[byte_index+1], 2)
         og_string += char * count
-    formatted = og_string[2:-1].encode().decode('unicode_escape')[3:]
+    formatted = og_string[2:-1].encode().decode('utf-8')[3:]
     with open('moby_dick_rle_uncompressed.txt', 'w') as f:
         f.write(formatted)
 
